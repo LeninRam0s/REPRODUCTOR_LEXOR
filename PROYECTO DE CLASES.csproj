@@ -57,11 +57,15 @@
     <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="DotLiquid, Version=2.1.418.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
+      <HintPath>packages\DotLiquid.2.1.418\lib\net45\DotLiquid.dll</HintPath>
+    </Reference>
     <Reference Include="MACTrackBarLib, Version=1.0.5896.38740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MACTrackBarLib.dll.1.0.2\lib\net40\MACTrackBarLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +94,9 @@
   <ItemGroup>
     <Compile Include="Clases\ClsReproductor.cs" />
     <Compile Include="Clases\ClsRandom.cs" />
+    <Compile Include="ListaEnOrden\ListaOrdenada.cs" />
+    <Compile Include="ListaEstruc\Lista.cs" />
+    <Compile Include="ListaEstruc\Nodo.cs" />
     <Compile Include="Resources\Reproductor.cs">
       <SubType>Form</SubType>
     </Compile>
