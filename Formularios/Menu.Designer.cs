@@ -38,7 +38,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(364, 323);
+            this.button4.Location = new System.Drawing.Point(332, 283);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(112, 62);
             this.button4.TabIndex = 3;
@@ -48,7 +48,7 @@
             // Radio
             // 
             this.Radio.Image = ((System.Drawing.Image)(resources.GetObject("Radio.Image")));
-            this.Radio.Location = new System.Drawing.Point(396, 98);
+            this.Radio.Location = new System.Drawing.Point(332, 98);
             this.Radio.Name = "Radio";
             this.Radio.Size = new System.Drawing.Size(70, 70);
             this.Radio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -59,7 +59,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(396, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(322, 174);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 430);
+            this.ClientSize = new System.Drawing.Size(646, 430);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Radio);
             this.Controls.Add(this.button4);
