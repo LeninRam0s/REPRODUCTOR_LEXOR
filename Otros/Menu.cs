@@ -1,4 +1,4 @@
-﻿
+﻿using PROYECTO_DE_CLASES;
 using REPRODUCTOR_LEXOR.Clases;
 using System;
 using System.Windows.Forms;

@@ -73,6 +73,16 @@ namespace REPRODUCTOR_LEXOR.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aleatorio_btn {
+            get {
+                object obj = ResourceManager.GetObject("aleatorio_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_1 {
             get {
                 object obj = ResourceManager.GetObject("back-1", resourceCulture);
@@ -206,6 +216,16 @@ namespace REPRODUCTOR_LEXOR.Properties {
         internal static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volume_1 {
+            get {
+                object obj = ResourceManager.GetObject("volume-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

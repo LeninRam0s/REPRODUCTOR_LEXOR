@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REPRODUCTOR_LEXOR.Formularios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,9 @@ namespace REPRODUCTOR_LEXOR
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmAsistente());
-            Application.Run(new Menu());
+           // Application.Run(new Menu());
+            //Application.Run(new Reproductor());
+            Application.Run(new frmReproductor());
         }
     }
 }

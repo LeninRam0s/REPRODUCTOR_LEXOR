@@ -10,22 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Concurrent;
+using XComponent.SliderBar;
 
-namespace REPRODUCTOR_LEXOR
+namespace REPRODUCTOR_LEXOR.Formularios
 {
-    public partial class Reproductor:Form 
+    
+    public partial class frmReproductor : Form
     {
-       // Reproductor rp = new Reproductor();
-        bool Play = false;      
+        // Reproductor rp = new Reproductor();
+        bool Play = false;
         string[] ArhivosMP3;
         string[] Ruta;
-        
-        ClsRandom azar = new ClsRandom(1, 5);
 
-        public Reproductor()
+
+        public frmReproductor()
         {
-            InitializeComponent(); //inicializa el formulario
-        }//Reproductor
+            InitializeComponent();
+        }
 
         private void Agg_Click(object sender, EventArgs e)
         {
@@ -33,14 +34,14 @@ namespace REPRODUCTOR_LEXOR
             {
                 //Busqueda.Multiselect = true;
                 Multiselect = true //se pueden seleccionar multiples archivos simultaneos    
-            }; 
+            };
 
             if (Busqueda.ShowDialog() == DialogResult.OK)
             {
                 ArhivosMP3 = Busqueda.SafeFileNames;
                 Ruta = Busqueda.FileNames;
 
-                foreach (var PistaMP3 in ArhivosMP3)  
+                foreach (var PistaMP3 in ArhivosMP3)
                 {
                     LstCanciones.Items.Add(PistaMP3);
                 }
@@ -91,13 +92,13 @@ namespace REPRODUCTOR_LEXOR
 
         public void ActualizarAvance()
         {
-            if (ReproductorWMP.playState==WMPLib.WMPPlayState.wmppsPlaying)
+            if (ReproductorWMP.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 //Controla el tiempo maximo de la pista en reprodducion
-                BarrAvance.Maximum=(int)ReproductorWMP.Ctlcontrols.currentItem.duration;
+                BarrAvance.Maximum = (int)ReproductorWMP.Ctlcontrols.currentItem.duration;
                 timer1.Start();
             }
-            else if (ReproductorWMP.playState==WMPLib.WMPPlayState.wmppsPaused)
+            else if (ReproductorWMP.playState == WMPLib.WMPPlayState.wmppsPaused)
             {
                 timer1.Stop(); //para parar la actualizacion del tiempo recorrido de la pista
             }
@@ -120,22 +121,22 @@ namespace REPRODUCTOR_LEXOR
 
         private void BarrAvance_ValueChanged(object sender, decimal value)
         {
-             ReproductorWMP.Ctlcontrols.currentPosition= BarrAvance.Value;           
+            ReproductorWMP.Ctlcontrols.currentPosition = BarrAvance.Value;
         }//sincronizar barra de reproductor
 
-        private void pictureBox3_Click(object sender, EventArgs e) 
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            string Anterior="";
-            ArhivosMP3[0]= Anterior;
-           
+            string Anterior = "";
+            ArhivosMP3[0] = Anterior;
+
             int Ann = Convert.ToInt32(Anterior);
-            int Validacion=1;
-           
+            int Validacion = 1;
+
             do
             {
                 Random fortuito = new Random();
                 int Aleatorio = fortuito.Next(ArhivosMP3.Length);
-                if (Aleatorio!=Ann)
+                if (Aleatorio != Ann)
                 {
                     ReproductorWMP.URL = ArhivosMP3[Aleatorio];
                     Ann = Aleatorio;
@@ -156,13 +157,13 @@ namespace REPRODUCTOR_LEXOR
             ClsRandom azar = new ClsRandom(0, 200);
             MessageBox.Show(azar.GenerarRandom().ToString());
         }//NO TERMINADO
- 
+
         public void AleatorioBnt_Click(object sender, EventArgs e)
-            
+
         {
             //ClsRandom Aleatorio = new ClsRandom(0,ArhivosMP3.Length);
             ClsRandom Aleatorio = new ClsRandom(1, Ruta.Length);
-           
+
             ReproductorWMP.URL = Aleatorio.GenerarRandom().ToString();
             //LstCanciones.SelectedIndex = Aleatorio;
             ReproductorWMP.Ctlcontrols.play();
@@ -172,7 +173,7 @@ namespace REPRODUCTOR_LEXOR
             //LstCanciones.SelectedIndex = ArhivosMP3[Aleatorio];
         }
 
-        private void Power_Click(object sender, EventArgs e)
+        /*private void Power_Click(object sender, EventArgs e)
         {
             Ruta = Directory.GetFiles(@"E:\MUSIC", "*mp3*");
 
@@ -185,14 +186,14 @@ namespace REPRODUCTOR_LEXOR
                     {
                         LstCanciones.Items.Add(Path.GetFileName(cancion));
                     }
-                    Random rand = new Random(); 
-                    int al = rand.Next(Ruta.Length); 
+                    Random rand = new Random();
+                    int al = rand.Next(Ruta.Length);
                     ReproductorWMP.URL = Ruta[al]; ;
                     LstCanciones.SelectedIndex = al;
                     BtnPlay.Image = Properties.Resources.pause;
                     Play = false;
                     break;
-               
+
                 case false:
                     Power.Image = Properties.Resources.power;
                     //label_encender.Text = "Encender";
@@ -202,13 +203,23 @@ namespace REPRODUCTOR_LEXOR
                     {
                         LstCanciones.Items.Remove(Path.GetFileName(cancion));
                     }
-                  Play = true;
+                    Play = true;
                     break;
-            }       
-        }//pendiente         
+            }
+        }//pendiente    */     
 
         private void Reproductor_Load(object sender, EventArgs e)
         {
+        }
+
+        private void LstCanciones_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
+        }//la seleccion de la lista se reproduce
+
+        private void ReproductorWMP_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

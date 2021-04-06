@@ -142,6 +142,12 @@
     <Compile Include="Clases\ClsReproductor.cs" />
     <Compile Include="Clases\ClsRandom.cs" />
     <Compile Include="Ejemplos\clsEjemplos.cs" />
+    <Compile Include="Formularios\frmReproductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmReproductor.Designer.cs">
+      <DependentUpon>frmReproductor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaEnOrden\ListaOrdenada.cs" />
     <Compile Include="ListaEstruc\Lista.cs" />
     <Compile Include="ListaEstruc\Nodo.cs" />
@@ -151,19 +157,13 @@
     <Compile Include="Resources\Reproductor.Designer.cs">
       <DependentUpon>Reproductor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmReproductor.resx">
+      <DependentUpon>frmReproductor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Reproductor.resx">
       <DependentUpon>Reproductor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -265,6 +265,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\aleatorio_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
