@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reproductor));
-            this.ReproductorWMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.LstCanciones = new System.Windows.Forms.ListBox();
             this.BarrAvance = new XComponent.SliderBar.MACTrackBar();
             this.BarVolumen = new XComponent.SliderBar.MACTrackBar();
             this.Label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.BtnAleatorio = new System.Windows.Forms.Button();
+            this.Power = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BtnStop = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,8 +44,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Agg = new System.Windows.Forms.PictureBox();
-            this.Power = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).BeginInit();
+            this.ReproductorWMP = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.Power)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -53,18 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Agg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Power)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ReproductorWMP
-            // 
-            this.ReproductorWMP.Enabled = true;
-            this.ReproductorWMP.Location = new System.Drawing.Point(12, 453);
-            this.ReproductorWMP.Name = "ReproductorWMP";
-            this.ReproductorWMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductorWMP.OcxState")));
-            this.ReproductorWMP.Size = new System.Drawing.Size(304, 69);
-            this.ReproductorWMP.TabIndex = 0;
-            this.ReproductorWMP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.ReproductorWMP_PlayStateChange);
             // 
             // LstCanciones
             // 
@@ -154,6 +144,18 @@
             this.BtnAleatorio.UseVisualStyleBackColor = true;
             this.BtnAleatorio.Click += new System.EventHandler(this.btnAleatorio_Click);
             // 
+            // Power
+            // 
+            this.Power.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.power;
+            this.Power.Location = new System.Drawing.Point(25, 12);
+            this.Power.Name = "Power";
+            this.Power.Size = new System.Drawing.Size(50, 50);
+            this.Power.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Power.TabIndex = 13;
+            this.Power.TabStop = false;
+            this.Power.Visible = false;
+            this.Power.Click += new System.EventHandler(this.Power_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -231,17 +233,15 @@
             this.Agg.TabStop = false;
             this.Agg.Click += new System.EventHandler(this.Agg_Click);
             // 
-            // Power
+            // ReproductorWMP
             // 
-            this.Power.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.power;
-            this.Power.Location = new System.Drawing.Point(25, 12);
-            this.Power.Name = "Power";
-            this.Power.Size = new System.Drawing.Size(50, 50);
-            this.Power.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Power.TabIndex = 13;
-            this.Power.TabStop = false;
-            this.Power.Visible = false;
-            this.Power.Click += new System.EventHandler(this.Power_Click);
+            this.ReproductorWMP.Enabled = true;
+            this.ReproductorWMP.Location = new System.Drawing.Point(12, 453);
+            this.ReproductorWMP.Name = "ReproductorWMP";
+            this.ReproductorWMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductorWMP.OcxState")));
+            this.ReproductorWMP.Size = new System.Drawing.Size(304, 69);
+            this.ReproductorWMP.TabIndex = 0;
+            this.ReproductorWMP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.ReproductorWMP_PlayStateChange);
             // 
             // Reproductor
             // 
@@ -268,7 +268,7 @@
             this.Name = "Reproductor";
             this.Text = "Reproductor Lexor";
             this.Load += new System.EventHandler(this.Reproductor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Power)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -276,7 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Agg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Power)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

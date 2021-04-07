@@ -47,9 +47,22 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 }
             }//seleccion multiple y aceptar para agregar
 
-            ReproductorWMP.URL = Ruta[0];//inicia en la posicion cero el arreglo
-            LstCanciones.SelectedIndex = 0; //aca se establece q posicion se va a reproducir
-            BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
+
+
+            
+            for (int i = 0; i < LstCanciones.Items.Count; i++)
+            {
+                int j = LstCanciones.SelectedIndex = 0;
+
+                ReproductorWMP.URL = Ruta[j];//inicia en la posicion cero el arreglo
+                LstCanciones.SelectedIndex = j; //aca se establece q posicion se va a reproducir
+
+                
+                
+                //BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
+                
+            }
+            
         } //agg archivos desde una ubicacion
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,65 +174,58 @@ namespace REPRODUCTOR_LEXOR.Formularios
         public void AleatorioBnt_Click(object sender, EventArgs e)
 
         {
-            //ClsRandom Aleatorio = new ClsRandom(0,ArhivosMP3.Length);
-            ClsRandom Aleatorio = new ClsRandom(1, Ruta.Length);
-
-            ReproductorWMP.URL = Aleatorio.GenerarRandom().ToString();
-            //LstCanciones.SelectedIndex = Aleatorio;
+            Random Aleatorio = new Random();
+            int rd = Aleatorio.Next(1, LstCanciones.Items.Count);
+            LstCanciones.SelectedIndex = rd;
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
-            ReproductorWMP.URL = Ruta[1];//reproduce el elemento seleccionado en la lst
-            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce
-            //LstCanciones.SelectedIndex = ArhivosMP3[Aleatorio];
+            ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
+            Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
         }
 
-        /*private void Power_Click(object sender, EventArgs e)
-        {
-            Ruta = Directory.GetFiles(@"E:\MUSIC", "*mp3*");
 
-            switch (Play)
-            {
-                case true:
-                    Power.Image = Properties.Resources.power; //primer boton=cambio de boton
-                    //label_encender.Text = "Apagar";
-                    foreach (string cancion in Ruta)
-                    {
-                        LstCanciones.Items.Add(Path.GetFileName(cancion));
-                    }
-                    Random rand = new Random();
-                    int al = rand.Next(Ruta.Length);
-                    ReproductorWMP.URL = Ruta[al]; ;
-                    LstCanciones.SelectedIndex = al;
-                    BtnPlay.Image = Properties.Resources.pause;
-                    Play = false;
-                    break;
 
-                case false:
-                    Power.Image = Properties.Resources.power;
-                    //label_encender.Text = "Encender";
-                    ReproductorWMP.Ctlcontrols.pause();
-                    BtnPlay.Image = Properties.Resources.play_button;
-                    foreach (string cancion in Ruta)
-                    {
-                        LstCanciones.Items.Remove(Path.GetFileName(cancion));
-                    }
-                    Play = true;
-                    break;
-            }
-        }//pendiente    */     
+        /*  private void Power_Click(object sender, EventArgs e)
+          {
+              Ruta = Directory.GetFiles(@"E:\MUSIC", "*mp3*");
 
-        private void Reproductor_Load(object sender, EventArgs e)
-        {
-        }
+              switch (Play)
+              {
+                  case true:
+                      Power.Image = Properties.Resources.power; //primer boton=cambio de boton
+                      //label_encender.Text = "Apagar";
+                      foreach (string cancion in Ruta)
+                      {
+                          LstCanciones.Items.Add(Path.GetFileName(cancion));
+                      }
+                      Random rand = new Random();
+                      int al = rand.Next(Ruta.Length);
+                      ReproductorWMP.URL = Ruta[al]; ;
+                      LstCanciones.SelectedIndex = al;
+                      BtnPlay.Image = Properties.Resources.pause;
+                      Play = false;
+                      break;
 
-        private void LstCanciones_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
-        }//la seleccion de la lista se reproduce
+                  case false:
+                      Power.Image = Properties.Resources.power;
+                      //label_encender.Text = "Encender";
+                      ReproductorWMP.Ctlcontrols.pause();
+                      BtnPlay.Image = Properties.Resources.play_button;
+                      foreach (string cancion in Ruta)
+                      {
+                          LstCanciones.Items.Remove(Path.GetFileName(cancion));
+                      }
+                      Play = true;
+                      break;
+              }
+          }//pendiente      */
 
-        private void ReproductorWMP_Enter(object sender, EventArgs e)
-        {
 
-        }
+        /* private void LstCanciones_SelectedIndexChanged_1(object sender, EventArgs e)
+         {
+             ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
+         }//la seleccion de la lista se reproduce
+        */
+
     }
 }
