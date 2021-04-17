@@ -43,6 +43,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             foreach (var cancion in media.todasLasListas())
             {
                 listBoxReproduccion.Items.Add(cancion);
+
             }
         }
 
@@ -64,12 +65,13 @@ namespace REPRODUCTOR_LEXOR.Formularios
             TodoSobreMultimedia media = new TodoSobreMultimedia();
 
             int i = 0;
-            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()))
+            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString())) //
             {
                 //String nombrePistas=cancion;
-                String nombrePistas = listaCircular.insertar(cancion.ToString()).ToString();
+                String nombrePistas = listaCircular.insertar(cancion).ToString();
 
-                reproductor.LstCanciones.Items.Add(nombrePistas);//canciones cambio por listaNodos
+                //reproductor.LstCanciones.Items.Add(cancion);//canciones cambio por listaNodos
+                reproductor.LstCanciones.Items.Add(cancion);
                 i++;
             }
 
@@ -81,7 +83,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
             reproductor.Ruta = new string[i];
             reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).ToArray();
-            reproductor.LstCanciones.SelectedIndex = 0;
+            reproductor.LstCanciones.SelectedIndex=0;
             reproductor.ReproductorWMP.URL = reproductor.Ruta[0];
 
             this.Close();
