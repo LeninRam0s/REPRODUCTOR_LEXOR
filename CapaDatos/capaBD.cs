@@ -48,6 +48,19 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             return archivosMultimedia;
         }
 
+        public List<String> listasMultimedia()
+        {
+            String query = $"SELECT * FROM multimedia";
+            DataTable dt = conexionSQL.consultaDT(query);
+            List<String> archivosMultimedia = new List<String>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                String nombreMultimedia = dr["nombreArchivo"].ToString();
+                archivosMultimedia.Add(nombreMultimedia);
+            }
+            return archivosMultimedia;
+        }
+
         public void guardarReproduccion(String pista, String lista)
         {
             String query = $"INSERT INTO playlist VALUES('{pista}','{lista}')";

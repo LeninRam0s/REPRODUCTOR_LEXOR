@@ -253,7 +253,17 @@ namespace REPRODUCTOR_LEXOR.Formularios
             listasReproduccion.Show();
         }
 
-        
+        private void frmReproductor_Load(object sender, EventArgs e)
+        {
+            //TodoSobreMultimedia media = new TodoSobreMultimedia();
+
+            //foreach (var cancion in media.todasLasPistas())
+            //{
+            //    LstCanciones.Items.Add(cancion);
+            //}
+        }
+
+
 
 
 

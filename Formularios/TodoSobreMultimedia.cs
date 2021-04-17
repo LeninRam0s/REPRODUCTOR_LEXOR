@@ -50,6 +50,14 @@ namespace REPRODUCTOR_LEXOR.Formularios
             return datos.listasReproduccion();
         }
 
+        public List<string> todasLasPistas()
+        {
+            CapaBD datos = new CapaBD();
+            return datos.listasMultimedia();
+        }
+
+
+
         public void insertarPlaylist(string nombreLista, string nombreCancion)
         {
             CapaBD datos = new CapaBD();
