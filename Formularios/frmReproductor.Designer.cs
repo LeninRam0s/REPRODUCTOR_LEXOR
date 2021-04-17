@@ -39,8 +39,9 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelAgg = new System.Windows.Forms.Label();
             this.labelLogo = new System.Windows.Forms.Label();
             this.labelListas = new System.Windows.Forms.Label();
-            this.ReproductorWMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.labelAlbum = new System.Windows.Forms.Label();
+            this.labelAgregarAPlaylist = new System.Windows.Forms.Label();
+            this.btnRepetirLista = new System.Windows.Forms.PictureBox();
             this.btnAgregarCancionesPlaylist = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnFormListas = new System.Windows.Forms.PictureBox();
@@ -51,8 +52,8 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.btnSiguinete = new System.Windows.Forms.PictureBox();
             this.btnAnterior = new System.Windows.Forms.PictureBox();
             this.Agg = new System.Windows.Forms.PictureBox();
-            this.labelAgregarAPlaylist = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).BeginInit();
+            this.ReproductorWMP = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepetirLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCancionesPlaylist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFormListas)).BeginInit();
@@ -63,6 +64,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.btnSiguinete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnterior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Agg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).BeginInit();
             this.SuspendLayout();
             // 
             // LstCanciones
@@ -194,17 +196,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelListas.TabIndex = 16;
             this.labelListas.Text = "Listas";
             // 
-            // ReproductorWMP
-            // 
-            this.ReproductorWMP.Enabled = true;
-            this.ReproductorWMP.Location = new System.Drawing.Point(339, 0);
-            this.ReproductorWMP.Name = "ReproductorWMP";
-            this.ReproductorWMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductorWMP.OcxState")));
-            this.ReproductorWMP.Size = new System.Drawing.Size(1027, 603);
-            this.ReproductorWMP.TabIndex = 0;
-            this.ReproductorWMP.UseWaitCursor = true;
-            this.ReproductorWMP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.ReproductorWMP_PlayStateChange);
-            // 
             // labelAlbum
             // 
             this.labelAlbum.AutoSize = true;
@@ -216,12 +207,34 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelAlbum.TabIndex = 18;
             this.labelAlbum.Text = "Album";
             // 
+            // labelAgregarAPlaylist
+            // 
+            this.labelAgregarAPlaylist.AutoSize = true;
+            this.labelAgregarAPlaylist.BackColor = System.Drawing.Color.Transparent;
+            this.labelAgregarAPlaylist.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAgregarAPlaylist.ForeColor = System.Drawing.Color.Goldenrod;
+            this.labelAgregarAPlaylist.Location = new System.Drawing.Point(137, 61);
+            this.labelAgregarAPlaylist.Name = "labelAgregarAPlaylist";
+            this.labelAgregarAPlaylist.Size = new System.Drawing.Size(69, 15);
+            this.labelAgregarAPlaylist.TabIndex = 20;
+            this.labelAgregarAPlaylist.Text = "Agregar a Lista";
+            // 
+            // btnRepetirLista
+            // 
+            this.btnRepetirLista.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.replay;
+            this.btnRepetirLista.Location = new System.Drawing.Point(358, 616);
+            this.btnRepetirLista.Name = "btnRepetirLista";
+            this.btnRepetirLista.Size = new System.Drawing.Size(37, 37);
+            this.btnRepetirLista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRepetirLista.TabIndex = 21;
+            this.btnRepetirLista.TabStop = false;
+            // 
             // btnAgregarCancionesPlaylist
             // 
-            this.btnAgregarCancionesPlaylist.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.ICONO_POSITIVO;
-            this.btnAgregarCancionesPlaylist.Location = new System.Drawing.Point(150, 13);
+            this.btnAgregarCancionesPlaylist.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.plus1;
+            this.btnAgregarCancionesPlaylist.Location = new System.Drawing.Point(150, 7);
             this.btnAgregarCancionesPlaylist.Name = "btnAgregarCancionesPlaylist";
-            this.btnAgregarCancionesPlaylist.Size = new System.Drawing.Size(43, 44);
+            this.btnAgregarCancionesPlaylist.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarCancionesPlaylist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAgregarCancionesPlaylist.TabIndex = 19;
             this.btnAgregarCancionesPlaylist.TabStop = false;
@@ -241,7 +254,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.btnFormListas.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.list;
             this.btnFormListas.Location = new System.Drawing.Point(207, 8);
             this.btnFormListas.Name = "btnFormListas";
-            this.btnFormListas.Size = new System.Drawing.Size(49, 50);
+            this.btnFormListas.Size = new System.Drawing.Size(50, 50);
             this.btnFormListas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnFormListas.TabIndex = 15;
             this.btnFormListas.TabStop = false;
@@ -310,7 +323,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.btnAnterior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAnterior.TabIndex = 5;
             this.btnAnterior.TabStop = false;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAleatorio_Click);
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // Agg
             // 
@@ -324,17 +337,16 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.Agg.TabStop = false;
             this.Agg.Click += new System.EventHandler(this.Agg_Click);
             // 
-            // labelAgregarAPlaylist
+            // ReproductorWMP
             // 
-            this.labelAgregarAPlaylist.AutoSize = true;
-            this.labelAgregarAPlaylist.BackColor = System.Drawing.Color.Transparent;
-            this.labelAgregarAPlaylist.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAgregarAPlaylist.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelAgregarAPlaylist.Location = new System.Drawing.Point(137, 61);
-            this.labelAgregarAPlaylist.Name = "labelAgregarAPlaylist";
-            this.labelAgregarAPlaylist.Size = new System.Drawing.Size(69, 15);
-            this.labelAgregarAPlaylist.TabIndex = 20;
-            this.labelAgregarAPlaylist.Text = "Agregar a Lista";
+            this.ReproductorWMP.Enabled = true;
+            this.ReproductorWMP.Location = new System.Drawing.Point(339, 0);
+            this.ReproductorWMP.Name = "ReproductorWMP";
+            this.ReproductorWMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductorWMP.OcxState")));
+            this.ReproductorWMP.Size = new System.Drawing.Size(1027, 603);
+            this.ReproductorWMP.TabIndex = 0;
+            this.ReproductorWMP.UseWaitCursor = true;
+            this.ReproductorWMP.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.ReproductorWMP_PlayStateChange);
             // 
             // frmReproductor
             // 
@@ -342,6 +354,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1366, 713);
+            this.Controls.Add(this.btnRepetirLista);
             this.Controls.Add(this.labelAgregarAPlaylist);
             this.Controls.Add(this.btnAgregarCancionesPlaylist);
             this.Controls.Add(this.labelAlbum);
@@ -368,7 +381,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReproductor";
             this.Text = "Reproductor Lexor";
-            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepetirLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCancionesPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFormListas)).EndInit();
@@ -379,6 +392,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.btnSiguinete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnterior)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Agg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductorWMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +421,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private System.Windows.Forms.Label labelAgregarAPlaylist;
         public System.Windows.Forms.ListBox LstCanciones;
         public AxWMPLib.AxWindowsMediaPlayer ReproductorWMP;
+        private System.Windows.Forms.PictureBox btnRepetirLista;
     }
 }

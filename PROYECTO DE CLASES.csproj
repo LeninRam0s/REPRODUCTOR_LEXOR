@@ -245,12 +245,6 @@
     <Compile Include="ListaEnOrden\ListaOrdenada.cs" />
     <Compile Include="ListaEstruc\Lista.cs" />
     <Compile Include="ListaEstruc\Nodo.cs" />
-    <Compile Include="Formularios\Reproductor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Reproductor.Designer.cs">
-      <DependentUpon>Reproductor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Persistencia\ConexionDbSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -262,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmReproductor.resx">
       <DependentUpon>frmReproductor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reproductor.resx">
-      <DependentUpon>Reproductor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -396,6 +387,9 @@
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
     <Content Include="Resources\aleatorio_btn.png" />
+    <None Include="Resources\replay.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\plus.png" />
     <None Include="Resources\ICONO POSITIVO.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />

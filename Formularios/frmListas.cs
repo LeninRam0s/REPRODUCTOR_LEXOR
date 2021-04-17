@@ -69,7 +69,8 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 //String nombrePistas=cancion;
                 String nombrePistas = listaCircular.insertar(cancion.ToString()).ToString();
 
-                reproductor.LstCanciones.Items.Add(nombrePistas);//canciones cambio por listaNodos
+                //reproductor.LstCanciones.Items.Add(cancion);//canciones cambio por listaNodos
+                reproductor.LstCanciones.Items.Add(nombrePistas);
                 i++;
             }
 

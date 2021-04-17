@@ -63,7 +63,7 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             {
                 String nombreMultimedia = dr["nombrePista"].ToString();
                 archivosMultimedia.Add(nombreMultimedia);
-                nombreMultimedia = "";
+                //nombreMultimedia = "";
             }
             return archivosMultimedia;
         }

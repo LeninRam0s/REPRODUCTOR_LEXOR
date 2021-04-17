@@ -25,11 +25,14 @@ namespace REPRODUCTOR_LEXOR.Formularios
         bool Play = false;
         public string[] ArhivosMP3;
         public string[] Ruta;
+        int iter;
+
 
         TodoSobreMultimedia todoCancion = new TodoSobreMultimedia();
         public frmReproductor()
         {
             InitializeComponent();
+            iter = 0;
         }
 
         private void Agg_Click(object sender, EventArgs e)
@@ -40,7 +43,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 Multiselect = true //se pueden seleccionar multiples archivos simultaneos    
             };
             TodoSobreMultimedia media = new TodoSobreMultimedia();
-            List<MultimediaDB> lista;
             if (Busqueda.ShowDialog() == DialogResult.OK)
             {
                 ArhivosMP3 = Busqueda.SafeFileNames;
@@ -56,9 +58,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     }
                     i++;
                 }
-
-               
-
             }//seleccion multiple y aceptar para agregar
 
             for (int i = 0; i < LstCanciones.Items.Count; i++)//  //LstCanciones.Items.Count
@@ -69,11 +68,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
                 j++;
             }
-
-
-
-
-
         } //agg archivos desde una ubicacion
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,74 +144,95 @@ namespace REPRODUCTOR_LEXOR.Formularios
             ReproductorWMP.Ctlcontrols.currentPosition = BarrAvance.Value;
         }//sincronizar barra de reproductor
 
-       /* private void btnAleatorio_Click(object sender, EventArgs e)
-        {
-            string Anterior = "";
-            ArhivosMP3[0] = Anterior;
+        /* private void btnAleatorio_Click(object sender, EventArgs e)
+         {
+             string Anterior = "";
+             ArhivosMP3[0] = Anterior;
 
-            int Ann = Convert.ToInt32(Anterior);
-            int Validacion = 1;
+             int Ann = Convert.ToInt32(Anterior);
+             int Validacion = 1;
 
-            do
-            {
-                Random fortuito = new Random();
-                int Aleatorio = fortuito.Next(ArhivosMP3.Length);
-                if (Aleatorio != Ann)
-                {
-                    ReproductorWMP.URL = ArhivosMP3[Aleatorio];
-                    Ann = Aleatorio;
-                    Validacion = 1;
-                }
-                else
-                {
-                    Validacion = 0;
-                }
+             do
+             {
+                 Random fortuito = new Random();
+                 int Aleatorio = fortuito.Next(ArhivosMP3.Length);
+                 if (Aleatorio != Ann)
+                 {
+                     ReproductorWMP.URL = ArhivosMP3[Aleatorio];
+                     Ann = Aleatorio;
+                     Validacion = 1;
+                 }
+                 else
+                 {
+                     Validacion = 0;
+                 }
 
-            } while (Validacion == 0);
+             } while (Validacion == 0);
 
-        } //era el aleatorio no sirve    */
-
-        public void AleatorioBnt_Click(object sender, EventArgs e)
-        {
-            Random Aleatorio = new Random();
-            int rd = Aleatorio.Next(1, LstCanciones.Items.Count);
-            LstCanciones.SelectedIndex = rd;
-            ReproductorWMP.Ctlcontrols.play();
-            Play = true;
-            ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
-            Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
-        }//no sirve
-
-        private void btnSiguinete_Click(object sender, EventArgs e)
-        {
-            ReproductorWMP.Ctlcontrols.next();
-            ReproductorWMP.Ctlcontrols.play();
-            Play = true;
-
-            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
-            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];
-        }
+         } //era el aleatorio no sirve    */
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            ReproductorWMP.Ctlcontrols.previous();
-            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
-            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];
+
+
+            iter--;
+            if(iter < 0)
+            {
+                iter = LstCanciones.Items.Count - 1;
+                ReproductorWMP.URL = Ruta[iter];
+                LstCanciones.SelectedIndex = iter ;
+            }
+            else
+            {
+                ReproductorWMP.URL = Ruta[iter];
+                LstCanciones.SelectedIndex = iter;
+                if (iter > LstCanciones.Items.Count)
+                {
+                    iter = 0;
+                }
+            }
+           
+
+            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex]; //se agg el =iter
+            //ReproductorWMP.Ctlcontrols.next();
+            //ReproductorWMP.Ctlcontrols.play();
+            //Play = true;
+
+
+
+        }
+
+        private void btnSiguinete_Click(object sender, EventArgs e)
+        {
+
+            iter++;
+           
+            if (iter>=LstCanciones.Items.Count)
+            {
+                iter = 0;
+            }
+            ReproductorWMP.URL = Ruta[iter];
+            LstCanciones.SelectedIndex = iter;
+            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex]; //se agg el =iter
+            //ReproductorWMP.Ctlcontrols.next();
+            //ReproductorWMP.Ctlcontrols.play();
+            //Play = true;
+
+            
         }
 
         private void btnAleatorio_Click(object sender, EventArgs e)
         {
             Random Aleatorio = new Random();
             int rd = Aleatorio.Next(1, LstCanciones.Items.Count);
+
+
             LstCanciones.SelectedIndex = rd;
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
             ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
-            Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
+           // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
             //TODAVIA NO SIRVE ESTA MADRE
-
-            
-
         }
 
         private void btnFormListas_Click(object sender, EventArgs e)
@@ -237,6 +252,10 @@ namespace REPRODUCTOR_LEXOR.Formularios
             AddOwnedForm(listasReproduccion);
             listasReproduccion.Show();
         }
+
+        
+
+
 
 
 
