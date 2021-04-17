@@ -13,6 +13,8 @@ using System.Collections.Concurrent;
 using XComponent.SliderBar;
 using AxWMPLib;
 using WMPLib;
+using REPRODUCTOR_LEXOR.CapaDatos;
+using REPRODUCTOR_LEXOR.DAO;
 
 namespace REPRODUCTOR_LEXOR.Formularios
 {
@@ -21,10 +23,10 @@ namespace REPRODUCTOR_LEXOR.Formularios
     {
         // Reproductor rp = new Reproductor();
         bool Play = false;
-        string[] ArhivosMP3;
-        string[] Ruta;
+        public string[] ArhivosMP3;
+        public string[] Ruta;
 
-
+        TodoSobreMultimedia todoCancion = new TodoSobreMultimedia();
         public frmReproductor()
         {
             InitializeComponent();
@@ -32,20 +34,30 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void Agg_Click(object sender, EventArgs e)
         {
+            LstCanciones.Items.Clear();
             OpenFileDialog Busqueda = new OpenFileDialog
             {
                 Multiselect = true //se pueden seleccionar multiples archivos simultaneos    
             };
-
+            TodoSobreMultimedia media = new TodoSobreMultimedia();
+            List<MultimediaDB> lista;
             if (Busqueda.ShowDialog() == DialogResult.OK)
             {
                 ArhivosMP3 = Busqueda.SafeFileNames;
                 Ruta = Busqueda.FileNames;
 
+                int i = 0;
                 foreach (var PistaMP3 in ArhivosMP3)
                 {
                     LstCanciones.Items.Add(PistaMP3);
+                    if (media.exiteCancion(Ruta[i]) == false)
+                    {
+                        media.insertarCancion(Ruta[i]);
+                    }
+                    i++;
                 }
+
+               
 
             }//seleccion multiple y aceptar para agregar
 
@@ -66,8 +78,9 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
-            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
+            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
         }//lista canciones seleccionadas
 
         private void BtnPlay_Click(object sender, EventArgs e)
@@ -177,7 +190,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void btnSiguinete_Click(object sender, EventArgs e)
         {
-            
             ReproductorWMP.Ctlcontrols.next();
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
@@ -186,7 +198,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnAnterior_Click(object sender, EventArgs e)
         {
             ReproductorWMP.Ctlcontrols.previous();
             ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
@@ -202,9 +214,29 @@ namespace REPRODUCTOR_LEXOR.Formularios
             Play = true;
             ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
             Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
+            //TODAVIA NO SIRVE ESTA MADRE
+
+            
 
         }
 
+        private void btnFormListas_Click(object sender, EventArgs e)
+        {
+            Form formListas = new frmListas();
+            AddOwnedForm(formListas);
+            //btnAgregarCancionesPlaylist.Dispose();
+            formListas.Show();
+        }
+
+
+        private void btnAgregarCancionesPlaylist_Click(object sender, EventArgs e)
+        {
+            //validar cuando no hayan pistas seleccionadas
+            string cancion = Ruta[LstCanciones.SelectedIndex];
+            Form listasReproduccion = new frmListas(cancion);
+            AddOwnedForm(listasReproduccion);
+            listasReproduccion.Show();
+        }
 
 
 

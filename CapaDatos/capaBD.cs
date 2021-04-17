@@ -9,40 +9,39 @@ using System.Threading.Tasks;
 
 namespace REPRODUCTOR_LEXOR.CapaDatos
 {
-    class capaBD
+    class CapaBD
     {
-        ConexionDbSQL cn = new ConexionDbSQL();
-        public bool existe(Multimedia multimedia)
+        ConexionDbSQL conexionSQL = new ConexionDbSQL();
+        public bool existeDato(string multimedia)
         {
-            String query = $"SELECT * FROM multimedia WHERE nombre = '{multimedia.getNombre()}'";
-
-            DataTable dt = cn.consultaDT(query);
+            String query = $"SELECT * FROM multimedia WHERE nombreArchivo = '{multimedia}'";
+            DataTable dt = conexionSQL.consultaDT(query);
             int n = dt.Rows.Count;
-            return n == 0 ? true : false;
+            return n == 0 ? false : true;
         }
 
-        public void agregar(Multimedia multimedia)
+        public void agregar(string multimedia)
         {
-            String query = $"INSERT INTO multimedia VALUES('{multimedia.getNombre()}')";
-            cn.ejecutaScripSQL(query);
+            String query = $"INSERT INTO multimedia VALUES('{multimedia}')";
+            conexionSQL.ejecutaScripSQL(query);
         }
 
-        public String insertar(string nombre)
+        public void guardarLista(string multimedia)
         {
-            String query = $"INSERT INTO listas VALUES('{nombre}')";
-            cn.ejecutaScripSQL(query);
-
-            return "Lista Guardada";
+            String query = $"INSERT INTO listas VALUES('{multimedia}')";
+            conexionSQL.ejecutaScripSQL(query);
         }
+
+
 
         public List<String> listasReproduccion()
         {
             String query = $"SELECT * FROM listas";
-            DataTable dt = cn.consultaDT(query);
+            DataTable dt = conexionSQL.consultaDT(query);
             List<String> archivosMultimedia = new List<String>();
             foreach (DataRow dr in dt.Rows)
             {
-                String nombreMultimedia = dr["nombreArchivo"].ToString();
+                String nombreMultimedia = dr["nombre"].ToString();
                 archivosMultimedia.Add(nombreMultimedia);
                 nombreMultimedia = "";
             }
@@ -52,13 +51,13 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
         public void guardarReproduccion(String pista, String lista)
         {
             String query = $"INSERT INTO playlist VALUES('{pista}','{lista}')";
-            cn.ejecutaScripSQL(query);
+            conexionSQL.ejecutaScripSQL(query);
         }
 
-        public List<String> cancionesRepro(string lista)
+        public List<String> reproList(string lista)
         {
             String query = $"SELECT  * FROM playlist WHERE nombreLista='{lista}';";
-            DataTable dt = cn.consultaDT(query);
+            DataTable dt = conexionSQL.consultaDT(query);
             List<String> archivosMultimedia = new List<String>();
             foreach (DataRow dr in dt.Rows)
             {

@@ -60,6 +60,9 @@
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="DnsClient, Version=1.4.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>packages\DnsClient.1.4.0\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
     <Reference Include="DotLiquid, Version=2.1.433.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
       <HintPath>packages\DotLiquid.2.1.433\lib\net45\DotLiquid.dll</HintPath>
     </Reference>
@@ -78,31 +81,90 @@
     <Reference Include="MACTrackBarLib, Version=1.0.5896.38740, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MACTrackBarLib.dll.1.0.2\lib\net40\MACTrackBarLib.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.12.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Bson.2.12.2\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.12.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Driver.2.12.2\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.12.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Driver.Core.2.12.2\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Libmongocrypt.1.2.1\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.23\lib\net48\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="policy.2.0.taglib-sharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>packages\taglib.2.1.0.0\lib\policy.2.0.taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Renci.SshNet, Version=2020.0.1.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>packages\SSH.NET.2020.0.1\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
@@ -118,9 +180,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="TestProject, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Xamarin.Bin.CircularProgressbar.1.0.1\lib\netstandard2.0\TestProject.dll</HintPath>
     </Reference>
@@ -144,17 +208,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapaDatos\capaBD.cs" />
+    <Compile Include="CapaDatos\CapaBD.cs" />
     <Compile Include="Clases\ClsReproductor.cs" />
     <Compile Include="Clases\ClsRandom.cs" />
-    <Compile Include="DAO\Multimedia.cs" />
+    <Compile Include="DAO\listasDB.cs" />
+    <Compile Include="DAO\MultimediaDB.cs" />
+    <Compile Include="DAO\playListDB.cs" />
     <Compile Include="Ejemplos\clsEjemplos.cs" />
+    <Compile Include="Formularios\frmNuevaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmNuevaLista.Designer.cs">
+      <DependentUpon>frmNuevaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListas.Designer.cs">
+      <DependentUpon>frmListas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmReproductor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmReproductor.Designer.cs">
       <DependentUpon>frmReproductor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\TodoSobreMultimedia.cs" />
+    <Compile Include="ListaCircularExamples\ListaCircular.cs" />
+    <Compile Include="ListaCircularEnlazada\clsListaCircularBase.cs" />
+    <Compile Include="ListaCircularEnlazada\Nodo.cs" />
+    <Compile Include="ListaCircularExamples\Nodo.cs" />
+    <Compile Include="listaDoble\clsListaDoble.cs" />
+    <Compile Include="listaDoble\IteradorLista.cs" />
+    <Compile Include="listaDoble\Nodo.cs" />
+    <Compile Include="listaDoble\random.cs" />
     <Compile Include="ListaEnOrden\ListaOrdenada.cs" />
     <Compile Include="ListaEstruc\Lista.cs" />
     <Compile Include="ListaEstruc\Nodo.cs" />
@@ -167,6 +254,12 @@
     <Compile Include="Persistencia\ConexionDbSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmNuevaLista.resx">
+      <DependentUpon>frmNuevaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmListas.resx">
+      <DependentUpon>frmListas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmReproductor.resx">
       <DependentUpon>frmReproductor.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +277,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include=".editorconfig" />
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -296,7 +391,12 @@
     <None Include="Resources\volume-1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
+    <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
+    <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
+    <Content Include="mongocrypt.dll" />
     <Content Include="Resources\aleatorio_btn.png" />
+    <None Include="Resources\ICONO POSITIVO.png" />
     <Content Include="Resources\list.png" />
     <None Include="Resources\list1.png" />
   </ItemGroup>
@@ -308,6 +408,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('packages\MongoDB.Libmongocrypt.1.2.1\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MongoDB.Libmongocrypt.1.2.1\build\MongoDB.Libmongocrypt.targets'))" />
+    <Error Condition="!Exists('packages\MongoDB.Driver.Core.2.12.2\build\MongoDB.Driver.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MongoDB.Driver.Core.2.12.2\build\MongoDB.Driver.Core.targets'))" />
   </Target>
   <Import Project="packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.5.0.0.2012\build\Xamarin.Forms.targets')" />
+  <Import Project="packages\MongoDB.Libmongocrypt.1.2.1\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.2.1\build\MongoDB.Libmongocrypt.targets')" />
+  <Import Project="packages\MongoDB.Driver.Core.2.12.2\build\MongoDB.Driver.Core.targets" Condition="Exists('packages\MongoDB.Driver.Core.2.12.2\build\MongoDB.Driver.Core.targets')" />
 </Project>
