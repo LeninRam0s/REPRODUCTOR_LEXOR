@@ -9,7 +9,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
     class clsListaDoble
     {
         //el primer nodo que se inserta
-        public Nodo cabeza; //se cambio de protected a public
+        public Nodo cabeza;
 
         //constructor
 
@@ -54,16 +54,17 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 
             while ((actual != null) && (!encontrado))
             {
-                encontrado = (actual.dato == entrada); //con estring la comparacion == se cambia a equals
+                encontrado = (actual.dato.Equals(entrada)); //con estring la comparacion == se cambia a equals
                 if (!encontrado)
                 {
                     actual = actual.adelante;
                 }
             }//enlace del nodo anterior con el siguiente
+
             if (actual != null)
             {
                 //distinguir entre nodo cabecera del resto de la lista
-                if (actual == cabeza)
+                if (actual.Equals(cabeza))
                 {
                     cabeza = actual.adelante;
                     if (actual.adelante != null)

@@ -19,7 +19,7 @@ namespace REPRODUCTOR_LEXOR.ListaEnOrden
         {
             Nodo nuevo;
             nuevo = new Nodo(entrada);
-            if (primero == null)
+            if (primero.Equals(null))//se cambio el == por .Equals()
             {
                 primero = nuevo;
             }

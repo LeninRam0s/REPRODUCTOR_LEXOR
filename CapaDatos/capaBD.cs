@@ -80,8 +80,20 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             return listaCircular;
         }//LISTA CIRCULAR
 
+        public clsListaDoble insertarAlInicio(string lista)
+        {
+            String query = $"SELECT  * FROM playlist WHERE nombreLista='{lista}';";
+            DataTable dt = conexionSQL.consultaDT(query);
+            clsListaDoble datoInicio = new clsListaDoble();
+            foreach (DataRow dr in dt.Rows)
+            {
+                String nombreMultimedia = dr["nombrePista"].ToString();
+                datoInicio.insertarCabezaLista(nombreMultimedia);
+            }
+            return datoInicio;
+        }//INSERTA INICIO
 
-        public clsListaDoble listaDoble(string lista)
+        public clsListaDoble insertarAlFinal(string lista)
         {
             String query = $"SELECT  * FROM playlist WHERE nombreLista='{lista}';";
             DataTable dt = conexionSQL.consultaDT(query);
@@ -89,10 +101,12 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             foreach (DataRow dr in dt.Rows)
             {
                 String nombreMultimedia = dr["nombrePista"].ToString();
-                listaEnlazada.insertarCabezaLista(nombreMultimedia);
+                listaEnlazada.insertaDespues(, nombreMultimedia);
             }
             return listaEnlazada;
-        }//LISTA CIRCULAR
+        }//INSERTA INICIO
+
+
 
     }
 }
