@@ -42,7 +42,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
                 ultimo = nuevo;
             }
             totalDatos++;
-        }
+        }//insertar
 
         public void verLista()
         {
@@ -56,7 +56,8 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
                     actual = actual.siguiente;
                 } while (actual != primero);
             }
-        }
+        }//ver lista
+
         public string[] traerArreglo()
         {
             string[] datosLista = new string[totalDatos];
@@ -74,7 +75,5 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
             }
             return datosLista;
         }
-
-
     }
 }

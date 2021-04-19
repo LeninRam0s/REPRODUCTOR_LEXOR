@@ -8,12 +8,12 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEnlazada
 {
     class Nodo
     {
-        public int dato;
+        public string dato;
         public Nodo enlace;
 
-        public Nodo(int entrada)
+        public Nodo(string entrada)
         {
-            dato = entrada;
+            dato.Equals(entrada);
             enlace = this;// se apunta asímismo
         }
     }

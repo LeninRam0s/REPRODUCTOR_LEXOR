@@ -39,7 +39,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelAgg = new System.Windows.Forms.Label();
             this.labelLogo = new System.Windows.Forms.Label();
             this.labelListas = new System.Windows.Forms.Label();
-            this.labelAlbum = new System.Windows.Forms.Label();
             this.labelAgregarAPlaylist = new System.Windows.Forms.Label();
             this.btnRepetirLista = new System.Windows.Forms.PictureBox();
             this.btnAgregarCancionesPlaylist = new System.Windows.Forms.PictureBox();
@@ -138,7 +137,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.ForeColor = System.Drawing.Color.SkyBlue;
-            this.Label1.Location = new System.Drawing.Point(9, 674);
+            this.Label1.Location = new System.Drawing.Point(344, 681);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(94, 15);
             this.Label1.TabIndex = 10;
@@ -195,17 +194,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelListas.Size = new System.Drawing.Size(31, 15);
             this.labelListas.TabIndex = 16;
             this.labelListas.Text = "Listas";
-            // 
-            // labelAlbum
-            // 
-            this.labelAlbum.AutoSize = true;
-            this.labelAlbum.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAlbum.ForeColor = System.Drawing.Color.SkyBlue;
-            this.labelAlbum.Location = new System.Drawing.Point(9, 689);
-            this.labelAlbum.Name = "labelAlbum";
-            this.labelAlbum.Size = new System.Drawing.Size(38, 15);
-            this.labelAlbum.TabIndex = 18;
-            this.labelAlbum.Text = "Album";
             // 
             // labelAgregarAPlaylist
             // 
@@ -357,7 +345,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.Controls.Add(this.btnRepetirLista);
             this.Controls.Add(this.labelAgregarAPlaylist);
             this.Controls.Add(this.btnAgregarCancionesPlaylist);
-            this.Controls.Add(this.labelAlbum);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.labelListas);
             this.Controls.Add(this.btnFormListas);
@@ -417,7 +404,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private System.Windows.Forms.PictureBox btnFormListas;
         private System.Windows.Forms.Label labelListas;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label labelAlbum;
         private System.Windows.Forms.PictureBox btnAgregarCancionesPlaylist;
         private System.Windows.Forms.Label labelAgregarAPlaylist;
         public System.Windows.Forms.ListBox LstCanciones;

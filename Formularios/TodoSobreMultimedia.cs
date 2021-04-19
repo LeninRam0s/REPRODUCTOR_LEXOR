@@ -54,7 +54,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         public List<string> todasLasPistas()
         {
             CapaBD datos = new CapaBD();
-            return datos.listasMultimedia();
+            return datos.listaMultimedia();
         }
 
 
@@ -62,13 +62,13 @@ namespace REPRODUCTOR_LEXOR.Formularios
         public void insertarPlaylist(string nombreLista, string nombreCancion)
         {
             CapaBD datos = new CapaBD();
-            datos.guardarReproduccion(nombreCancion, nombreLista);
+            datos.guardarPlayList(nombreCancion, nombreLista);
         }
 
         public ListaCircular reproducirPlaylist(string playlist)
         {
             CapaBD datos = new CapaBD();
-            return datos.reproList(playlist);
+            return datos.reproducirListaCircular(playlist);
         }
     }
 }

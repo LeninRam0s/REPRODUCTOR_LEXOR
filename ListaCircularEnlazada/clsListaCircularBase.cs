@@ -14,7 +14,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEnlazada
             lc = null;
         }
 
-        public clsListaCircularBase insertar(int entrada)
+        public clsListaCircularBase insertarDatosLDE(string entrada)
         {
             Nodo nuevo;
             nuevo = new Nodo(entrada);
@@ -27,7 +27,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEnlazada
             return this;
         }
 
-        public void eliminar(int entrada)
+        public void eliminar(string entrada)
         {
             Nodo actual;
             bool encontrado = false;
