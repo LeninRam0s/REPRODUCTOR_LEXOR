@@ -8,20 +8,20 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 {
     class Nodo
     {
-        public int dato;
+        public string dato;
         public Nodo adelante;
         public Nodo atras;
 
-        public int getDato()
+        public string getDato()
         {
             return dato;
         }
 
         //constructor
 
-        public Nodo(int entrada)
+        public Nodo(string entrada)
         {
-            dato = entrada;
+            dato.Equals(entrada);
             adelante = atras = null;
         }
     }

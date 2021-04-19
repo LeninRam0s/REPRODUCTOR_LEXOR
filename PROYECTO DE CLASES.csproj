@@ -234,14 +234,12 @@
       <DependentUpon>frmReproductor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\TodoSobreMultimedia.cs" />
-    <Compile Include="ListaCircularExamples\ListaCircular.cs" />
-    <Compile Include="ListaCircularEnlazada\clsListaCircularBase.cs" />
-    <Compile Include="ListaCircularEnlazada\Nodo.cs" />
-    <Compile Include="ListaCircularExamples\Nodo.cs" />
-    <Compile Include="listaDoble\clsListaDoble.cs" />
-    <Compile Include="listaDoble\IteradorLista.cs" />
-    <Compile Include="listaDoble\Nodo.cs" />
-    <Compile Include="listaDoble\random.cs" />
+    <Compile Include="ListaCircular\ListaCircular.cs" />
+    <Compile Include="ListaCircular\Nodo.cs" />
+    <Compile Include="ListaDoble\clsListaDoble.cs" />
+    <Compile Include="ListaDoble\IteradorLista.cs" />
+    <Compile Include="ListaDoble\Nodo.cs" />
+    <Compile Include="ListaDoble\random.cs" />
     <Compile Include="ListaEnOrden\ListaOrdenada.cs" />
     <Compile Include="ListaEstruc\Lista.cs" />
     <Compile Include="ListaEstruc\Nodo.cs" />

@@ -1,6 +1,6 @@
 ﻿using REPRODUCTOR_LEXOR.DAO;
 using REPRODUCTOR_LEXOR.ListaCircularEjemplos;
-using REPRODUCTOR_LEXOR.ListaCircularEnlazada;
+using REPRODUCTOR_LEXOR.listaDoble;
 using REPRODUCTOR_LEXOR.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -81,15 +81,15 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
         }//LISTA CIRCULAR
 
 
-        public clsListaCircularBase listaDobleEnlazada(string lista)
+        public clsListaDoble listaDoble(string lista)
         {
             String query = $"SELECT  * FROM playlist WHERE nombreLista='{lista}';";
             DataTable dt = conexionSQL.consultaDT(query);
-            clsListaCircularBase listaEnlazada = new clsListaCircularBase();
+            clsListaDoble listaEnlazada = new clsListaDoble();
             foreach (DataRow dr in dt.Rows)
             {
                 String nombreMultimedia = dr["nombrePista"].ToString();
-                listaEnlazada.insertarDatosLDE(nombreMultimedia);
+                listaEnlazada.insertarCabezaLista(nombreMultimedia);
             }
             return listaEnlazada;
         }//LISTA CIRCULAR

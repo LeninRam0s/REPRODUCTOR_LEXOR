@@ -18,7 +18,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             cabeza = null;
         }
 
-        public clsListaDoble insertarCabezaLista(int entrada)
+        public clsListaDoble insertarCabezaLista(string entrada)
         {
             Nodo nuevo;
             nuevo = new Nodo(entrada);
@@ -31,7 +31,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             return this;
         }
 
-        public clsListaDoble insertaDespues(Nodo anterior, int entrada)
+        public clsListaDoble insertaDespues(Nodo anterior, string entrada)
         {
             Nodo nuevo;
             nuevo = new Nodo(entrada);
@@ -45,7 +45,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             return this;
         }
 
-        public void eliminar(int entrada)
+        public void eliminar(string entrada)
         {
             Nodo actual;
             actual = cabeza;
