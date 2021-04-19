@@ -8,12 +8,8 @@ namespace REPRODUCTOR_LEXOR.ListaCircularExamples
 {
     class Nodo
     {
-        public String dato;
-        public Nodo enlace;
-        public Nodo(String entrada)
-        {
-            dato = entrada;
-            enlace = this;// se apunta asímismo
-        }
+        public string dato { get; set; }
+        public Nodo siguiente { get; set; }
+        public Nodo atras { get; set; }
     }//este nodo trabaja con string en el dato
 }

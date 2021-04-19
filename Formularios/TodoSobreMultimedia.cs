@@ -1,5 +1,6 @@
 ﻿using REPRODUCTOR_LEXOR.CapaDatos;
 using REPRODUCTOR_LEXOR.DAO;
+using REPRODUCTOR_LEXOR.ListaCircularEjemplos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             List<MultimediaDB> lista = new List<MultimediaDB>();
             MultimediaDB cancion = new MultimediaDB();
 
-            foreach(var mp3 in rutas)
+            foreach (var mp3 in rutas)
             {
                 TagLib.File archivo = TagLib.File.Create(mp3);
                 cancion.setNombreArchivo(archivo.Tag.Title);
@@ -64,7 +65,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             datos.guardarReproduccion(nombreCancion, nombreLista);
         }
 
-        public List<string> reproducirPlaylist(string playlist)
+        public ListaCircular reproducirPlaylist(string playlist)
         {
             CapaBD datos = new CapaBD();
             return datos.reproList(playlist);

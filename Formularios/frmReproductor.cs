@@ -18,21 +18,19 @@ using REPRODUCTOR_LEXOR.DAO;
 
 namespace REPRODUCTOR_LEXOR.Formularios
 {
-    
+
     public partial class frmReproductor : Form
     {
         // Reproductor rp = new Reproductor();
         bool Play = false;
         public string[] ArhivosMP3;
         public string[] Ruta;
-        int iter;
+        int i;
 
-
-        TodoSobreMultimedia todoCancion = new TodoSobreMultimedia();
         public frmReproductor()
         {
             InitializeComponent();
-            iter = 0;
+            i = 0;
         }
 
         private void Agg_Click(object sender, EventArgs e)
@@ -42,6 +40,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             {
                 Multiselect = true //se pueden seleccionar multiples archivos simultaneos    
             };
+
             TodoSobreMultimedia media = new TodoSobreMultimedia();
             if (Busqueda.ShowDialog() == DialogResult.OK)
             {
@@ -59,22 +58,27 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     i++;
                 }
             }//seleccion multiple y aceptar para agregar
-
+            
             for (int i = 0; i < LstCanciones.Items.Count; i++)//  //LstCanciones.Items.Count
             {
                 int j = 0;
-                LstCanciones.SelectedIndex = j; //aca se establece q posicion se va a reproducir
-                ReproductorWMP.URL = Ruta[j];//inicia en la posicion cero el arreglo
-                BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
+                LstCanciones.SelectedIndex=j; //aca se establece q posicion se va a reproducir
+                Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
                 j++;
+               
+           
+                BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
+                
+                
+                
             }
+            
         } //agg archivos desde una ubicacion
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
-            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
+        { 
+                ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
+                Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
         }//lista canciones seleccionadas
 
         private void BtnPlay_Click(object sender, EventArgs e)
@@ -104,7 +108,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
+
             ActualizarAvance();
             BarrAvance.Value = (int)ReproductorWMP.Ctlcontrols.currentPosition;
             BarVolumen.Value = ReproductorWMP.settings.volume;
@@ -175,23 +179,23 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
 
 
-            iter--;
-            if(iter < 0)
+            i--;
+            if (i < 0)
             {
-                iter = LstCanciones.Items.Count - 1;
-                ReproductorWMP.URL = Ruta[iter];
-                LstCanciones.SelectedIndex = iter ;
+                i = LstCanciones.Items.Count - 1;
+                ReproductorWMP.URL = Ruta[i];
+                LstCanciones.SelectedIndex = i;
             }
             else
             {
-                ReproductorWMP.URL = Ruta[iter];
-                LstCanciones.SelectedIndex = iter;
-                if (iter > LstCanciones.Items.Count)
+                ReproductorWMP.URL = Ruta[i];
+                LstCanciones.SelectedIndex = i;
+                if (i > LstCanciones.Items.Count)
                 {
-                    iter = 0;
+                    i = 0;
                 }
             }
-           
+
 
             //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex]; //se agg el =iter
             //ReproductorWMP.Ctlcontrols.next();
@@ -205,20 +209,33 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private void btnSiguinete_Click(object sender, EventArgs e)
         {
 
-            iter++;
-           
-            if (iter>=LstCanciones.Items.Count)
+            i++;
+
+            if (i >= LstCanciones.Items.Count)
             {
-                iter = 0;
+                i = 0;
             }
-            ReproductorWMP.URL = Ruta[iter];
-            LstCanciones.SelectedIndex = iter;
+            ReproductorWMP.URL = Ruta[i];
+            LstCanciones.SelectedIndex = i;
             //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex]; //se agg el =iter
             //ReproductorWMP.Ctlcontrols.next();
             //ReproductorWMP.Ctlcontrols.play();
             //Play = true;
 
-            
+
+        }
+
+        public  void siguiente()
+        {
+
+            i++;
+
+            if (i >= LstCanciones.Items.Count)
+            {
+                i = 0;
+            }
+            ReproductorWMP.URL = Ruta[i];
+            LstCanciones.SelectedIndex = i;
         }
 
         private void btnAleatorio_Click(object sender, EventArgs e)
@@ -231,8 +248,8 @@ namespace REPRODUCTOR_LEXOR.Formularios
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
             ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
-           // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
-            //TODAVIA NO SIRVE ESTA MADRE
+                                          // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
+                                          //TODAVIA NO SIRVE ESTA MADRE
         }
 
         private void btnFormListas_Click(object sender, EventArgs e)
@@ -262,17 +279,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             //    LstCanciones.Items.Add(cancion);
             //}
         }
-
-
-
-
-
-
-
-
-
-
-
 
         /*  private void Power_Click(object sender, EventArgs e)
           {

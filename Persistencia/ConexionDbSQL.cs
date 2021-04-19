@@ -13,17 +13,6 @@ namespace REPRODUCTOR_LEXOR.Persistencia
         public SqlConnection conexion;
         private String conexionDB { get; }
 
-
-        //public static SqlConnection ConexionSQL()
-        //{
-        //    SqlConnection cn = new SqlConnection("DESKTOP-5G9V952;Initial Catalog=reproductorDB; Integrated Security=True");
-        //    cn.Open();
-        //    Console.WriteLine("Conexion Exitosa");
-        //    return cn;
-        //}
-       
-
-
         public ConexionDbSQL()
         {
             conexionDB = "Data Source=DESKTOP-5G9V952;Initial Catalog=reproductorDB;Integrated Security=True";

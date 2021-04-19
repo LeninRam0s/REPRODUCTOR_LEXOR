@@ -8,11 +8,11 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 {
     class IteradorLista
     {
-        private Nodo actual;
-
         public IteradorLista(clsListaDoble listaDoble)
         {
         }
+
+        private Nodo actual;
 
         public void IteratorLista(clsListaDoble id)
         {

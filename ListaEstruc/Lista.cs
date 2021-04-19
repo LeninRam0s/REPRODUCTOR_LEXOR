@@ -22,7 +22,7 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             Console.WriteLine("Ingrese: -1 para finalizar");
             return x;
         }//fin leer Entero
-       
+
         public Lista crearLista()
         {
             int x;
@@ -30,12 +30,12 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             do
             {
                 x = leerEntero();
-                if (x!=-1)
+                if (x != -1)
                 {
                     primero = new Nodo(x, primero);
                 }
 
-            } while (x!=-1);
+            } while (x != -1);
             return this;
         }//fin crear lista
 
@@ -43,13 +43,13 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
         {
             Nodo indice;
             int i;
-            if (posicion<0)
+            if (posicion < 0)
             {
                 return null;
             }
 
             indice = primero;
-            for (i = 1; (i < posicion) && (indice!=null); i++)
+            for (i = 1; (i < posicion) && (indice != null); i++)
             {
                 indice = indice.enlace;
             }
@@ -62,7 +62,7 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             ultimo.enlace = new Nodo(entrada);
             ultimo = ultimo.enlace;
 
-            return (Lista) this;//lo cambie x List
+            return (Lista)this;//lo cambie x List
         }//fin insertar ultimo
 
         public Lista insertarCabeza(Nodo cabeza, int valor)
@@ -75,13 +75,14 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
         public Nodo buscarLista(int destino)
         {
             Nodo indice;
-            for (indice = primero; indice !=null; indice= indice.enlace)
+            for (indice = primero; indice != null; indice = indice.enlace)
             {
-                if (destino==indice.dato)
+                if (destino == indice.dato)
                 {
                     return indice;
                 }
-            }return null;
+            }
+            return null;
         }//fin buscar lista
 
         public void eliminar(int entrada)
@@ -95,7 +96,7 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             encontrado = false;
 
             //buscar nodo anterior
-            while ((actual!=null)&&(!encontrado))
+            while ((actual != null) && (!encontrado))
             {
                 encontrado = (actual.dato == entrada);
 
@@ -107,11 +108,11 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             }//fin while
 
             //enlace del nodo anterior con el siguiente (puente)
-            if (actual!=null)
+            if (actual != null)
             {
                 //destinguir entre el nodo cabeza o si es otro de la lista
 
-                if (actual==primero)
+                if (actual == primero)
                 {
                     primero = actual.enlace;
                 }
@@ -127,12 +128,13 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
         {
             Nodo nuevo, anterior;
             anterior = buscarLista(testigo);
-            if (anterior!=null)
+            if (anterior != null)
             {
                 nuevo = new Nodo(entrada);
                 nuevo.enlace = anterior.enlace;
                 anterior.enlace = nuevo.enlace;
-            }return this;
+            }
+            return this;
         }//fin insetar Lista
 
         public void visuzlizar()
@@ -141,7 +143,7 @@ namespace REPRODUCTOR_LEXOR.ListaEstruc
             int k = 0;
             n = primero;
 
-            while (n!=null)
+            while (n != null)
             {
                 Console.WriteLine(n.dato);
                 n = n.enlace;

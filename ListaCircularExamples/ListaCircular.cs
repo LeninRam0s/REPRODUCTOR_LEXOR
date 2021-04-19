@@ -10,100 +10,71 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
 {
     class ListaCircular
     {
-        private Nodo lc;
+        Nodo primero = new Nodo();
+        Nodo ultimo = new Nodo();
+
+        int totalDatos;
 
         public ListaCircular()
         {
-            lc = null;
+            primero = null;
+            ultimo = null;
+            totalDatos = 0;
         }
 
-        public ListaCircular insertar(String entrada)
+        public void insertarDato(string dato)
         {
-            Nodo nuevo;
-            nuevo = new Nodo(entrada);
-            if (lc != null) // lista circular no vacía
+            Nodo nuevo = new Nodo();
+            nuevo.dato = dato;
+            if (primero == null)//en primera instancia el dato es nulo
             {
-                nuevo.enlace = lc.enlace;
-                lc.enlace = nuevo;
-            }
-            lc = nuevo;
-            return this;
-        }
+                primero = nuevo;
+                ultimo = nuevo;
 
-        public void eliminar(String entrada)
-        {
-            Nodo actual;
-            actual = lc;
-            while ((actual.enlace != lc) && !(actual.enlace.dato.Equals(entrada)))
-            {
-                if (!actual.enlace.dato.Equals(entrada))
-                {
-                    actual = actual.enlace;
-                }
-            }
-            // Enlace de nodo anterior con el siguiente
-            // si se ha encontrado el nodo.
-            if (actual.enlace.dato.Equals(entrada))
-            {
-                Nodo p;
-                p = actual.enlace; // Nodo a eliminar
-                if (lc == lc.enlace) // Lista con un solo nodo
-                {
-                    lc = null;
-                }
-                else
-                {
-                    if (p == lc)
-                    {
-                        lc = actual; // Se borra el elemento referenciado por lc,
-                                     // el nuevo acceso a la lista es el anterior
-                    }
-                    actual.enlace = p.enlace;
-                }
-                p = null;
-            }
-        }
-
-        public void borrarLista()
-        {
-            Nodo p;
-            if (lc != null)
-            {
-                p = lc;
-                do
-                {
-                    Nodo t;
-                    t = p;
-                    p = p.enlace;
-                    t = null; // no es estrictamente necesario
-                } while (p != lc);
-            }
+                primero.siguiente = primero;
+                primero.atras = ultimo;
+            }//se le agrega un dato a la cabeza
             else
             {
-                Console.WriteLine("\n\t Lista vacía.");
+                ultimo.siguiente = nuevo;
+                nuevo.atras = ultimo;
+                nuevo.siguiente = primero;
+                ultimo = nuevo;
             }
-            lc = null;
+            totalDatos++;
         }
 
-        public void recorrer()
+        public void verLista()
         {
-            Nodo p;
-            if (lc != null)
+
+            Nodo actual = new Nodo();
+            actual = primero;
+            if (actual != null)
             {
-                p = lc.enlace; // siguiente nodo al de acceso
                 do
                 {
-                    Console.WriteLine("\t" + p.dato);
-                    p = p.enlace;
-                } while (p != lc.enlace);
-            }
-            else
-            {
-                Console.WriteLine("\t Lista Circular vacía.");
+                    actual = actual.siguiente;
+                } while (actual != primero);
             }
         }
+        public string[] traerArreglo()
+        {
+            string[] datosLista = new string[totalDatos];
+            Nodo actual = new Nodo();
+            actual = primero;
+            int posicion = 0;
+            if (actual != null)
+            {
+                do
+                {
+                    datosLista[posicion] = actual.dato;
+                    actual = actual.siguiente;
+                    posicion++;
+                } while (actual != primero);
+            }
+            return datosLista;
+        }
 
-       
 
     }
 }

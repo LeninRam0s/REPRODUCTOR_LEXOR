@@ -17,7 +17,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         Form formNuevaLista = new frmNuevaLista();
         string cancion;
-       
+
         public frmListas(string cancion)
         {
             InitializeComponent();
@@ -43,7 +43,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             foreach (var cancion in media.todasLasListas())
             {
                 listBoxReproduccion.Items.Add(cancion);
-
             }
         }
 
@@ -57,34 +56,27 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private void btnReproducirLista_Click(object sender, EventArgs e)
         {
             ListaCircular listaCircular = new ListaCircular();
-            
+
             frmReproductor reproductor = Owner as frmReproductor;
             reproductor.LstCanciones.Items.Clear();
-            reproductor.ReproductorWMP.Ctlcontrols.stop();
-            
+            //reproductor.ReproductorWMP.Ctlcontrols.stop();
+
             TodoSobreMultimedia media = new TodoSobreMultimedia();
 
             int i = 0;
-            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString())) //
+            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).traerArreglo()) //
             {
-                //String nombrePistas=cancion;
-                String nombrePistas = listaCircular.insertar(cancion).ToString();
-
-                //reproductor.LstCanciones.Items.Add(cancion);//canciones cambio por listaNodos
                 reproductor.LstCanciones.Items.Add(cancion);
                 i++;
             }
 
-
-            //recorrer lista
-
-            //listaCircular.recorrer();
-
-
             reproductor.Ruta = new string[i];
-            reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).ToArray();
-            reproductor.LstCanciones.SelectedIndex=0;
+            reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).traerArreglo();
+
+            //reproductor.LstCanciones.SelectedIndex = 0;
+
             reproductor.ReproductorWMP.URL = reproductor.Ruta[0];
+
 
             this.Close();
         }

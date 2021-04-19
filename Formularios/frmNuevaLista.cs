@@ -15,7 +15,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         public frmNuevaLista()
         {
             InitializeComponent();
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void FormNuevaLista_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

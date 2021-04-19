@@ -12,14 +12,14 @@ namespace REPRODUCTOR_LEXOR.ListaEnOrden
     {
         public ListaOrdenada() : base()
         {
-            
+
         }
 
         public ListaOrdenada listaOrden(int entrada)
         {
             Nodo nuevo;
             nuevo = new Nodo(entrada);
-            if (primero==null)
+            if (primero == null)
             {
                 primero = nuevo;
             }
@@ -30,12 +30,12 @@ namespace REPRODUCTOR_LEXOR.ListaEnOrden
 
                 Nodo anterior, p;
                 anterior = p = primero;
-                while ((p.getEnlace()!=null)&&(entrada>p.getDato()))
+                while ((p.getEnlace() != null) && (entrada > p.getDato()))
                 {
                     anterior = p;
                     p = p.getEnlace();
                 }
-                if (entrada>p.getDato())
+                if (entrada > p.getDato())
                 {
                     anterior = p;
                 }
