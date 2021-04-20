@@ -28,7 +28,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
             InitializeComponent();
         }
-        
+
         private void btnFormNuevaLista_Click(object sender, EventArgs e)
         {
             formNuevaLista.Show();
@@ -48,46 +48,47 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private void btnAgregarAListaActual_Click(object sender, EventArgs e)
         {
             TodoSobreMultimedia media = new TodoSobreMultimedia();
-            
 
-            if (cancion!=null)
+
+            if (cancion != null)
             {
                 media.insertarAPlaylist(listBoxReproduccion.SelectedItem.ToString(), cancion);
                 MessageBox.Show("Pista Agregada");
                 this.Close();
             }
-            else 
+            else
             {
                 MessageBox.Show("No ha seleccionado la pista!");
                 this.Close();
             }
-            
-            
+
+
         }
 
         private void btnReproducirLista_Click(object sender, EventArgs e)
         {
-            ListaCircular listaCircular = new ListaCircular();
-
             frmReproductor reproductor = Owner as frmReproductor;
             reproductor.LstCanciones.Items.Clear();
             reproductor.ReproductorWMP.Ctlcontrols.stop();
 
             TodoSobreMultimedia media = new TodoSobreMultimedia();
-
-            int i = 0;
-            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ()) //
+            if(reproductor.LstCanciones!=null)
             {
-                reproductor.LstCanciones.Items.Add(cancion);
-                i++;
+                int i = 0;
+                foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ()) //
+                {
+                    reproductor.LstCanciones.Items.Add(cancion);
+                    i++;
+                }
+                reproductor.Ruta = new string[i];
+                reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ();
             }
-            reproductor.Ruta = new string[i];
-            reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ();
-            
-            //reproductor.LstCanciones.SelectedIndex=0;
-            //reproductor.ReproductorWMP.URL = reproductor.Ruta[i];
-
-
+            else
+            {
+                MessageBox.Show("Lista Vacia");
+                this.btnReproducirLista.Dispose();
+                this.Close();
+            }
             this.Close();
         }
 
@@ -99,6 +100,12 @@ namespace REPRODUCTOR_LEXOR.Formularios
             media.eliminarLista(nombrelista);
             MessageBox.Show(nombrelista + " Eliminada");
             this.Update();
+        }
+
+        private void btnActualizarLista_Click(object sender, EventArgs e)
+        {
+            new frmNuevaLista();
+            this.Refresh();
         }
     }
 }

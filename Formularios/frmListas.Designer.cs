@@ -89,6 +89,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.btnActualizarLista.TabIndex = 4;
             this.btnActualizarLista.Text = "Actualizar Lista";
             this.btnActualizarLista.UseVisualStyleBackColor = true;
+            this.btnActualizarLista.Click += new System.EventHandler(this.btnActualizarLista_Click);
             // 
             // btnAgregarAListaActual
             // 

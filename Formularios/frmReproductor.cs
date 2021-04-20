@@ -58,30 +58,17 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     i++;
                 }
             }//seleccion multiple y aceptar para agregar
-           
             
-            for (int i = 0; i < LstCanciones.Items.Count; i++)//  //LstCanciones.Items.Count
-            {
-                int j = 0;
-                LstCanciones.SelectedIndex=j; //aca se establece q posicion se va a reproducir
-                
-                j++;
-                //Console.WriteLine(LstCanciones.Items.Count+""+i+""+j);
-
-
-                BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
-  
-            }
-            LstCanciones.SelectedIndex = 0; //aca se establece q posicion se va a reproducir
-            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce 
-
-
         } //agg archivos desde una ubicacion
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
-            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce
+            for (int i = 0; i < LstCanciones.Items.Count; i++)//  //LstCanciones.Items.Count
+            {
+                ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
+                Label1.Text = LstCanciones.SelectedItem.ToString();//muestra la cancion que se reproduce
+            }            
+            BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
         }//lista canciones seleccionadas
 
         private void BtnPlay_Click(object sender, EventArgs e)
@@ -111,7 +98,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             ActualizarAvance();
             BarrAvance.Value = (int)ReproductorWMP.Ctlcontrols.currentPosition;
             BarVolumen.Value = ReproductorWMP.settings.volume;
@@ -153,7 +139,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-
             i--;
             if (i < 0)
             {
@@ -170,20 +155,10 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     i = 0;
                 }
             }
-
-
-            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex]; //se agg el =iter
-            //ReproductorWMP.Ctlcontrols.next();
-            //ReproductorWMP.Ctlcontrols.play();
-            //Play = true;
-
-
-
         }
 
         private void btnSiguinete_Click(object sender, EventArgs e)
         {
-
             i++;
 
             if (i >= LstCanciones.Items.Count)
@@ -198,14 +173,10 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
             Random Aleatorio = new Random();
             int rd = Aleatorio.Next(1, LstCanciones.Items.Count);
-
-
             LstCanciones.SelectedIndex = rd;
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
             ReproductorWMP.URL = Ruta[rd];
-            //reproduce el elemento seleccionado en la lst
-            // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
         }
 
         private void btnFormListas_Click(object sender, EventArgs e)
@@ -218,12 +189,21 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private void btnAgregarCancionesPlaylist_Click(object sender, EventArgs e)
         {
             //validar cuando no hayan pistas seleccionadas
-            string cancion = Ruta[LstCanciones.SelectedIndex];
-            Form listasReproduccion = new frmListas(cancion);
-            AddOwnedForm(listasReproduccion);
-            listasReproduccion.Show();
+            if (LstCanciones.SelectedItem!=null)
+            {
+                string cancion = Ruta[LstCanciones.SelectedIndex];
+                Form listasReproduccion = new frmListas(cancion);
+                AddOwnedForm(listasReproduccion);
+                listasReproduccion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar una pista"); 
+            }
+            
         }
 
+     
 
 
         //private void frmReproductor_Load(object sender, EventArgs e)
