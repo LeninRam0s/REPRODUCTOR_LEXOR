@@ -28,7 +28,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
             InitializeComponent();
         }
-
+        
         private void btnFormNuevaLista_Click(object sender, EventArgs e)
         {
             formNuevaLista.Show();
@@ -75,15 +75,15 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
             TodoSobreMultimedia media = new TodoSobreMultimedia();
 
-            //int i = 0;
-            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).traerArreglo()) //
+            int i = 0;
+            foreach (var cancion in media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ()) //
             {
                 reproductor.LstCanciones.Items.Add(cancion);
-               // i++;
+                i++;
             }
-            //reproductor.Ruta = new string[];
-            reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).traerArreglo();
-
+            reproductor.Ruta = new string[i];
+            reproductor.Ruta = media.reproducirPlaylist(listBoxReproduccion.SelectedItem.ToString()).mostrarAZ();
+            
             //reproductor.LstCanciones.SelectedIndex=0;
             //reproductor.ReproductorWMP.URL = reproductor.Ruta[i];
 
@@ -97,7 +97,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             String nombrelista = listBoxReproduccion.SelectedItem.ToString();
             TodoSobreMultimedia media = new TodoSobreMultimedia();
             media.eliminarLista(nombrelista);
-
             MessageBox.Show(nombrelista + " Eliminada");
             this.Update();
         }

@@ -189,7 +189,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelListas.BackColor = System.Drawing.Color.Transparent;
             this.labelListas.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListas.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelListas.Location = new System.Drawing.Point(217, 61);
+            this.labelListas.Location = new System.Drawing.Point(233, 61);
             this.labelListas.Name = "labelListas";
             this.labelListas.Size = new System.Drawing.Size(31, 15);
             this.labelListas.TabIndex = 16;
@@ -201,7 +201,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.labelAgregarAPlaylist.BackColor = System.Drawing.Color.Transparent;
             this.labelAgregarAPlaylist.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAgregarAPlaylist.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelAgregarAPlaylist.Location = new System.Drawing.Point(137, 61);
+            this.labelAgregarAPlaylist.Location = new System.Drawing.Point(153, 61);
             this.labelAgregarAPlaylist.Name = "labelAgregarAPlaylist";
             this.labelAgregarAPlaylist.Size = new System.Drawing.Size(69, 15);
             this.labelAgregarAPlaylist.TabIndex = 20;
@@ -220,7 +220,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             // btnAgregarCancionesPlaylist
             // 
             this.btnAgregarCancionesPlaylist.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.plus1;
-            this.btnAgregarCancionesPlaylist.Location = new System.Drawing.Point(150, 7);
+            this.btnAgregarCancionesPlaylist.Location = new System.Drawing.Point(161, 7);
             this.btnAgregarCancionesPlaylist.Name = "btnAgregarCancionesPlaylist";
             this.btnAgregarCancionesPlaylist.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarCancionesPlaylist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -240,7 +240,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             // 
             this.btnFormListas.BackColor = System.Drawing.Color.Transparent;
             this.btnFormListas.Image = global::REPRODUCTOR_LEXOR.Properties.Resources.list;
-            this.btnFormListas.Location = new System.Drawing.Point(207, 8);
+            this.btnFormListas.Location = new System.Drawing.Point(222, 8);
             this.btnFormListas.Name = "btnFormListas";
             this.btnFormListas.Size = new System.Drawing.Size(50, 50);
             this.btnFormListas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

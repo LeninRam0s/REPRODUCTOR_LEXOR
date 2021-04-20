@@ -71,12 +71,10 @@ namespace REPRODUCTOR_LEXOR.Formularios
             datos.guardarPlayList(nombreCancion, nombreLista);
         }//INSERTA ITEMS A LAS PLAYLIST
 
-
-
         public ListaCircular reproducirPlaylist(string playlist)
         {
             CapaDB datos = new CapaDB();
             return datos.reproducirListaCircular(playlist);
-        }//REPRODUCE LA PLAYLIST SELECCIONADA
+        }//REPRODUCE LISTA CIRCULAR
     }
 }

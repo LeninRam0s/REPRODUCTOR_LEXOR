@@ -18,10 +18,10 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             cabeza = null;
         }
 
-        public clsListaDoble insertarCabezaLista(string entrada)
+        public clsListaDoble insertarCabezaLista(string entradaMultimedia)
         {
             Nodo nuevo;
-            nuevo = new Nodo(entrada);
+            nuevo = new Nodo(entradaMultimedia);
             nuevo.siguiente = cabeza;
             if (cabeza != null)
             {
@@ -31,10 +31,10 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             return this;
         }
 
-        public clsListaDoble insertaDespues(Nodo anterior, string entrada)
+        public clsListaDoble insertaDespues(Nodo anterior, string entradaMultimedia)
         {
             Nodo nuevo;
-            nuevo = new Nodo(entrada);
+            nuevo = new Nodo(entradaMultimedia);
             nuevo.siguiente = anterior.siguiente;
             if (anterior.siguiente != null)
             {
@@ -45,7 +45,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             return this;
         }
 
-        public void eliminar(string entrada)
+        public void eliminar(string entradaMultimedia)
         {
             Nodo actual;
             actual = cabeza;
@@ -54,7 +54,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 
             while ((actual != null) && (!encontrado))
             {
-                encontrado = (actual.dato.Equals(entrada)); //con estring la comparacion == se cambia a equals
+                encontrado = (actual.dato.Equals(entradaMultimedia)); //con estring la comparacion == se cambia a equals
                 if (!encontrado)
                 {
                     actual = actual.siguiente;
@@ -64,7 +64,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
             if (actual != null)
             {
                 //distinguir entre nodo cabecera del resto de la lista
-                if (actual.Equals(cabeza))
+                if (actual==cabeza)
                 {
                     cabeza = actual.siguiente;
                     if (actual.siguiente != null)

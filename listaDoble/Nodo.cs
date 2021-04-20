@@ -19,9 +19,9 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 
         //constructor
 
-        public Nodo(string entrada)
+        public Nodo(string multimedia)
         {
-            dato = entrada;
+            dato = multimedia;
             siguiente = atras = null;
         }
     }

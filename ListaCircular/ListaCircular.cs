@@ -22,10 +22,10 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
             totalDatos = 0;
         }
 
-        public void insertarDato(string dato)
+        public void insertarDato(string multimedia)
         {
             Nodo nuevo = new Nodo();
-            nuevo.dato = dato;
+            nuevo.dato = multimedia;
             if (primero==null)//en primera instancia el dato es nulo
             {
                 primero = nuevo;
@@ -58,7 +58,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
             }
         }//ver lista
 
-        public string[] traerArreglo()
+        public string[] mostrarAZ()
         {
             string[] datosLista = new string[totalDatos];
             Nodo actual = new Nodo();
@@ -75,5 +75,24 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
             }
             return datosLista;
         }
+
+        //public string[] mostrarZA()
+        //{
+        //    string[] datosLista = new string[totalDatos];
+        //    Nodo actual = new Nodo();
+        //    actual = ultimo;
+        //    int posicion = 2;
+        //    if (actual != null)
+        //    {
+        //        do
+        //        {
+        //            datosLista[posicion] = actual.dato;
+        //            actual = actual.atras;
+        //        } while (actual != ultimo);
+
+        //    }return datosLista;
+            
+            
+        //}
     }
 }

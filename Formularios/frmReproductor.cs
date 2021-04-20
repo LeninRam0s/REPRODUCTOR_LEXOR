@@ -21,7 +21,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
     public partial class frmReproductor : Form
     {
-        // Reproductor rp = new Reproductor();
+        
         bool Play = false;
         public string[] ArhivosMP3;
         public string[] Ruta;
@@ -58,25 +58,30 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     i++;
                 }
             }//seleccion multiple y aceptar para agregar
+           
             
             for (int i = 0; i < LstCanciones.Items.Count; i++)//  //LstCanciones.Items.Count
             {
                 int j = 0;
                 LstCanciones.SelectedIndex=j; //aca se establece q posicion se va a reproducir
-                Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
+                
                 j++;
-               
-           
+                //Console.WriteLine(LstCanciones.Items.Count+""+i+""+j);
+
+
                 BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
   
             }
-            
+            LstCanciones.SelectedIndex = 0; //aca se establece q posicion se va a reproducir
+            Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce 
+
+
         } //agg archivos desde una ubicacion
 
         private void LstCanciones_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-                ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
-                Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce  
+        {
+            ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
+            //Label1.Text = ArhivosMP3[LstCanciones.SelectedIndex];//muestra la cancion que se reproduce
         }//lista canciones seleccionadas
 
         private void BtnPlay_Click(object sender, EventArgs e)
@@ -198,9 +203,9 @@ namespace REPRODUCTOR_LEXOR.Formularios
             LstCanciones.SelectedIndex = rd;
             ReproductorWMP.Ctlcontrols.play();
             Play = true;
-            ReproductorWMP.URL = Ruta[rd];//reproduce el elemento seleccionado en la lst
-                                          // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
-                                          //TODAVIA NO SIRVE ESTA MADRE
+            ReproductorWMP.URL = Ruta[rd];
+            //reproduce el elemento seleccionado en la lst
+            // Label1.Text = ArhivosMP3[rd];//muestra la cancion que se reproduce
         }
 
         private void btnFormListas_Click(object sender, EventArgs e)
@@ -219,6 +224,8 @@ namespace REPRODUCTOR_LEXOR.Formularios
             listasReproduccion.Show();
         }
 
+
+
         //private void frmReproductor_Load(object sender, EventArgs e)
         //{
         //    TodoSobreMultimedia media = new TodoSobreMultimedia();
@@ -228,9 +235,9 @@ namespace REPRODUCTOR_LEXOR.Formularios
         //        LstCanciones.Items.Add(cancion);
         //        ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
         //    }
-            
+
         //}
-        
+
 
     }
 }

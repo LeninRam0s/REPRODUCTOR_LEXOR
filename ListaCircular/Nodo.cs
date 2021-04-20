@@ -11,5 +11,5 @@ namespace REPRODUCTOR_LEXOR.ListaCircularExamples
         public string dato { get; set; }
         public Nodo siguiente { get; set; }
         public Nodo atras { get; set; }
-    }//este nodo trabaja con string en el dato
+    }//trabaja con string en el dato
 }
