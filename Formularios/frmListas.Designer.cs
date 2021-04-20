@@ -79,6 +79,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.btnEliminarLista.TabIndex = 3;
             this.btnEliminarLista.Text = "Eliminar Lista";
             this.btnEliminarLista.UseVisualStyleBackColor = true;
+            this.btnEliminarLista.Click += new System.EventHandler(this.btnEliminarLista_Click);
             // 
             // btnActualizarLista
             // 

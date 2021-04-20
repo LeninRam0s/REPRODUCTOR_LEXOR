@@ -43,7 +43,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.txtNombreNuevaLista.Name = "txtNombreNuevaLista";
             this.txtNombreNuevaLista.Size = new System.Drawing.Size(327, 20);
             this.txtNombreNuevaLista.TabIndex = 0;
-            this.txtNombreNuevaLista.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelNuevaLista
             // 
@@ -89,7 +88,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmNuevaLista";
             this.Text = "Nueva Lista de Reprocuccion";
-            this.Load += new System.EventHandler(this.FormNuevaLista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

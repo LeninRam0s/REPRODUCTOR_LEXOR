@@ -208,7 +208,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CapaDatos\CapaBD.cs" />
+    <Compile Include="CapaDatos\CapaDB.cs" />
     <Compile Include="Clases\ClsReproductor.cs" />
     <Compile Include="Clases\ClsRandom.cs" />
     <Compile Include="DAO\listasDB.cs" />

@@ -9,7 +9,7 @@ namespace REPRODUCTOR_LEXOR.listaDoble
     class Nodo
     {
         public string dato;
-        public Nodo adelante;
+        public Nodo siguiente;
         public Nodo atras;
 
         public string getDato()
@@ -21,8 +21,8 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 
         public Nodo(string entrada)
         {
-            dato.Equals(entrada);
-            adelante = atras = null;
+            dato = entrada;
+            siguiente = atras = null;
         }
     }
 }

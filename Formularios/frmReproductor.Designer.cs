@@ -368,7 +368,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReproductor";
             this.Text = "Reproductor Lexor";
-            this.Load += new System.EventHandler(this.frmReproductor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnRepetirLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCancionesPlaylist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

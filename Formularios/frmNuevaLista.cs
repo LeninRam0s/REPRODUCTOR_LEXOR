@@ -18,16 +18,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormNuevaLista_Load(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -37,6 +28,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
             TodoSobreMultimedia media = new TodoSobreMultimedia();
             media.guardarLista(txtNombreNuevaLista.Text);
+            MessageBox.Show("Lista: "+txtNombreNuevaLista.Text+" Creada con Exito!");
             this.Close();
         }
     }

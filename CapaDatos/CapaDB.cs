@@ -11,8 +11,10 @@ using System.Threading.Tasks;
 
 namespace REPRODUCTOR_LEXOR.CapaDatos
 {
-    class CapaBD
+    class CapaDB
     {
+        //ACCIONES DB
+
         ConexionDbSQL conexionSQL = new ConexionDbSQL();
 
         public bool existeDato(string multimedia)
@@ -66,6 +68,18 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             String query = $"INSERT INTO playlist VALUES('{pista}','{lista}')";
             conexionSQL.ejecutaScripSQL(query);
         }//GUARDAR LISTAS DE REPRODUCCION
+
+        public void eliminarPlayList(String nombreLista)
+        {
+            String query = $"DELETE FROM playlist WHERE nombreLista = '{nombreLista}'";
+            conexionSQL.ejecutaScripSQL(query);
+        }//ELIMINAR LISTA CON ITEMS
+
+        public void eliminarlayListCatalogo(String nombreLista)
+        {
+            String query = $"DELETE FROM listas WHERE nombre = '{nombreLista}'";
+            conexionSQL.ejecutaScripSQL(query);
+        }//ELIMINAR DEL CATALOGO
 
         public ListaCircular reproducirListaCircular(string lista)
         {

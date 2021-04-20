@@ -26,7 +26,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
         {
             Nodo nuevo = new Nodo();
             nuevo.dato = dato;
-            if (primero.Equals(null))//en primera instancia el dato es nulo
+            if (primero==null)//en primera instancia el dato es nulo
             {
                 primero = nuevo;
                 ultimo = nuevo;

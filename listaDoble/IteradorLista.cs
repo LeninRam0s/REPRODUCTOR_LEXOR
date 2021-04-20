@@ -14,18 +14,18 @@ namespace REPRODUCTOR_LEXOR.listaDoble
 
         private Nodo actual;
 
-        public void IteratorLista(clsListaDoble id)
-        {
-            actual = id.cabeza;
+        //public void IteratorLista(clsListaDoble id)
+        //{
+        //    actual = id.cabeza;
 
-        }
+        //}
         public Nodo siguiente()
         {
             Nodo a;
             a = actual;
             if (actual != null)
             {
-                actual = actual.adelante;
+                actual = actual.siguiente;
             }
             return a;
         }
