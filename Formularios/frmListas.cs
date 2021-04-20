@@ -49,7 +49,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         private void btnAgregarAListaActual_Click(object sender, EventArgs e)
         {
             TodoSobreMultimedia media = new TodoSobreMultimedia();
-            media.insertarPlaylist(listBoxReproduccion.SelectedItem.ToString(), cancion);
+            media.insertarAPlaylist(listBoxReproduccion.SelectedItem.ToString(), cancion);
             this.Close();
         }
 
