@@ -101,10 +101,10 @@ namespace REPRODUCTOR_LEXOR.CapaDatos
             foreach (DataRow dr in dt.Rows)
             {
                 String nombreMultimedia = dr["nombrePista"].ToString();
-                listaEnlazada.insertaDespues(, nombreMultimedia);
+                listaEnlazada.insertaDespues(new clsListaDoble().cabeza, nombreMultimedia);
             }
             return listaEnlazada;
-        }//INSERTA INICIO
+        }//INSERTA FINAL
 
 
 
