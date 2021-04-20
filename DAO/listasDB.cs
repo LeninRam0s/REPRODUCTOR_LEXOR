@@ -14,7 +14,6 @@ namespace REPRODUCTOR_LEXOR.DAO
         {
             this.nombre = nombre;
         }
-        
         public string getNombre()
         {
             return this.nombre;

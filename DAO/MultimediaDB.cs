@@ -14,7 +14,6 @@ namespace REPRODUCTOR_LEXOR.DAO
         {
             this.nombreArchivo = nombreFichero;
         }
-        
         public string getNombreArchivo()
         {
             return this.nombreArchivo;
