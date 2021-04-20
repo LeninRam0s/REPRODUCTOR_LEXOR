@@ -21,7 +21,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
     public partial class frmReproductor : Form
     {
-        
         bool Play = false;
         public string[] ArhivosMP3;
         public string[] Ruta;
@@ -57,7 +56,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
                     }
                     i++;
                 }
-            }//seleccion multiple y aceptar para agregar
+            }//seleccion multimedia
             
         } //agg archivos desde una ubicacion
 
@@ -67,7 +66,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
             {
                 ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];//reproduce el elemento seleccionado en la lst
                 Label1.Text = LstCanciones.SelectedItem.ToString();//muestra la cancion que se reproduce
-            }            
+            }
             BtnPlay.Image = Properties.Resources.pause; //el boton se cambia de play a pausa dependiendo el caso
         }//lista canciones seleccionadas
 
@@ -188,7 +187,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 
         private void btnAgregarCancionesPlaylist_Click(object sender, EventArgs e)
         {
-            //validar cuando no hayan pistas seleccionadas
             if (LstCanciones.SelectedItem!=null)
             {
                 string cancion = Ruta[LstCanciones.SelectedIndex];
@@ -202,22 +200,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
             }
             
         }
-
-     
-
-
-        //private void frmReproductor_Load(object sender, EventArgs e)
-        //{
-        //    TodoSobreMultimedia media = new TodoSobreMultimedia();
-
-        //    foreach (var cancion in media.todasLasPistas())
-        //    {
-        //        LstCanciones.Items.Add(cancion);
-        //        ReproductorWMP.URL = Ruta[LstCanciones.SelectedIndex];
-        //    }
-
-        //}
-
 
     }
 }
