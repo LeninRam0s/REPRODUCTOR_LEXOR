@@ -33,7 +33,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
         {
             formNuevaLista.Show();
             this.Close();
-        }
+        }//FRM PARA NUEVA LISTA
 
         private void frmListas_Load(object sender, EventArgs e)
         {
@@ -43,12 +43,11 @@ namespace REPRODUCTOR_LEXOR.Formularios
             {
                 listBoxReproduccion.Items.Add(cancion);
             }
-        }
+        }//CARGA LAS LISTAS AL ABRIR EL FRM
 
         private void btnAgregarAListaActual_Click(object sender, EventArgs e)
         {
             TodoSobreMultimedia media = new TodoSobreMultimedia();
-
 
             if (cancion != null)
             {
@@ -61,9 +60,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 MessageBox.Show("No ha seleccionado la pista!");
                 this.Close();
             }
-
-
-        }
+        }//AGG CANCION A LISTA
 
         private void btnReproducirLista_Click(object sender, EventArgs e)
         {
@@ -90,7 +87,7 @@ namespace REPRODUCTOR_LEXOR.Formularios
                 this.Close();
             }
             this.Close();
-        }
+        }//REPRODUCIR LISTA
 
         private void btnEliminarLista_Click(object sender, EventArgs e)
         {
@@ -100,12 +97,12 @@ namespace REPRODUCTOR_LEXOR.Formularios
             media.eliminarLista(nombrelista);
             MessageBox.Show(nombrelista + " Eliminada");
             this.Update();
-        }
+        }//ELIMINAR LISTA
 
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
             new frmNuevaLista();
             this.Refresh();
-        }
+        }//REFRESCAR
     }
 }
