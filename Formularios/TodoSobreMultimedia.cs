@@ -11,8 +11,6 @@ namespace REPRODUCTOR_LEXOR.Formularios
 {
     class TodoSobreMultimedia
     {
-
-
         public List<MultimediaDB> canciones(string[] rutas)
         {
             List<MultimediaDB> lista = new List<MultimediaDB>();
