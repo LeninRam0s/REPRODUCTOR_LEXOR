@@ -58,7 +58,6 @@ namespace REPRODUCTOR_LEXOR.Persistencia
             openConexion();
             try
             {
-
                 SqlCommand comm = new SqlCommand(sqll, conexion);
                 comm.ExecuteReader();
             }
@@ -77,11 +76,11 @@ namespace REPRODUCTOR_LEXOR.Persistencia
         /// de las conexiones.
         /// </summary>
         /// <param name="sqll"></param>
-        public void EjecutaSQLManual(String sqll)
-        {
-            // se abre y cierra la conexino manualmente
-            SqlCommand comm = new SqlCommand(sqll, conexion);
-            comm.ExecuteReader();
-        }
+        //public void EjecutaSQLManual(String sqll)
+        //{
+        //    // se abre y cierra la conexino manualmente
+        //    SqlCommand comm = new SqlCommand(sqll, conexion);
+        //    comm.ExecuteReader();
+        //}
     }
 }

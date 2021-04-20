@@ -21,7 +21,7 @@ namespace REPRODUCTOR_LEXOR.ListaCircularEjemplos
             ultimo = null;
             totalDatos = 0;
         }
-
+        
         public void insertarDato(string multimedia)
         {
             Nodo nuevo = new Nodo();
